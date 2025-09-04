@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -563,6 +564,158 @@
             box-shadow: 0 0 0 4px #a29bfe;
         }
 
+        /* Edit Mode Styles */
+        .editable {
+            position: relative;
+            border: 1px dashed transparent;
+            transition: border-color 0.3s ease;
+            padding: 2px;
+            border-radius: 3px;
+        }
+        
+        .editable:hover {
+            border-color: #0A66C2;
+            background-color: rgba(10, 102, 194, 0.05);
+        }
+        
+        .edit-icon {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #0A66C2;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        
+        .editable:hover .edit-icon {
+            opacity: 1;
+        }
+        
+        .edit-tray {
+            position: fixed;
+            top: 50%;
+            right: -350px;
+            transform: translateY(-50%);
+            width: 350px;
+            height: auto;
+            max-height: 80vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px 0 0 8px;
+            padding: 20px;
+            z-index: 1000;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+        }
+        
+        .edit-tray.open {
+            right: 0;
+        }
+        
+        .edit-tray h3 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            color: #0A66C2;
+        }
+        
+        .edit-form-group {
+            margin-bottom: 15px;
+        }
+        
+        .edit-form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .edit-form-group input,
+        .edit-form-group textarea,
+        .edit-form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .edit-form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .edit-tray-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .edit-tray-buttons button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn-save {
+            background-color: #0A66C2;
+            color: white;
+        }
+        
+        .btn-cancel {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .floating-edit-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #0A66C2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 999;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .floating-edit-button:hover {
+            transform: scale(1.1);
+            background-color: #074a8c;
+        }
+        
+        .edit-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            color: #0A66C2;
+        }
+        
+        .edit-section-title:first-child {
+            margin-top: 0;
+        }
+
         @media (max-width: 768px) {
             .resume-container {
                 flex-direction: column;
@@ -597,6 +750,18 @@
             .template-purple .resume-container {
                 flex-direction: column;
             }
+            
+            .edit-tray {
+                width: 300px;
+            }
+            
+            .floating-edit-button {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
 
         @media print {
@@ -626,6 +791,23 @@
                 padding: 20px;
             }
             .btn-download-pdf {
+                display: none !important;
+            }
+            
+            /* Hide edit elements when printing */
+            .editable {
+                border: none !important;
+            }
+            
+            .edit-icon {
+                display: none !important;
+            }
+            
+            .floating-edit-button {
+                display: none !important;
+            }
+            
+            .edit-tray {
                 display: none !important;
             }
             
@@ -725,89 +907,92 @@
     <div class="resume-wrapper">
         <div class="resume-container template-default" id="resume">
             <div class="left-sidebar">
-                <img src="https://i.ibb.co/MySFwBZ6/Flynn-2x2.jpg" alt="Flynn James Q. Pontino" class="profile-photo">
+                <div class="editable" data-field="profile-photo">
+                    <img src="https://i.ibb.co/MySFwBZ6/Flynn-2x2.jpg" alt="Flynn James Q. Pontino" class="profile-photo">
+                    <span class="edit-icon"><i class="fas fa-pencil-alt"></i></span>
+                </div>
 
                 <div class="section-title">Contact</div>
                 <div class="contact-info">
-                    <p><i class="fas fa-phone-alt"></i> +63 930 635 9306</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:jamescarbelledo@gmail.com">jamescarbelledo@gmail.com</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i> Toledo, Cebu, Philippines | Remote</p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fjpontino" target="_blank">linkedin.com/in/fjpontino</a></p>
-                    <p><i class="fas fa-globe"></i> <a href="https://flynn-b2b-lead-gen.pages.dev/" target="_blank">My Voice Recordings</a></p>
-                    <p><i class="fas fa-link"></i> <a href="https://flynn-telemarketing-leadgenservices.pages.dev/website" target="_blank">Lead Generation Website</a></p>
+                    <p class="editable" data-field="phone"><i class="fas fa-phone-alt"></i> <span class="field-content">+63 930 635 9306</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="editable" data-field="email"><i class="fas fa-envelope"></i> <a href="mailto:jamescarbelledo@gmail.com"><span class="field-content">jamescarbelledo@gmail.com</span></a><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="editable" data-field="location"><i class="fas fa-map-marker-alt"></i> <span class="field-content">Toledo, Cebu, Philippines | Remote</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="editable" data-field="linkedin"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fjpontino" target="_blank"><span class="field-content">linkedin.com/in/fjpontino</span></a><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="editable" data-field="website1"><i class="fas fa-globe"></i> <a href="https://flynn-b2b-lead-gen.pages.dev/" target="_blank"><span class="field-content">My Voice Recordings</span></a><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="editable" data-field="website2"><i class="fas fa-link"></i> <a href="https://flynn-telemarketing-leadgenservices.pages.dev/website" target="_blank"><span class="field-content">Lead Generation Website</span></a><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
                 </div>
 
                 <div class="section-title mt-4">Skills</div>
-                <ul class="skills-list">
-                    <li>B2B Lead Generation Strategy</li>
-                    <li>HubSpot & Pipedrive CRM</li>
-                    <li>LinkedIn Sales Navigator</li>
-                    <li>Cold Calling & Telemarketing</li>
-                    <li>Appointment Setting & Qualification (BANT/MEDDIC)</li>
-                    <li>Pipeline Management & Forecasting</li>
-                    <li>Sales Reporting & Data Analysis</li>
-                    <li>Client Relationship Management</li>
-                    <li>Multi-Channel Outreach (Email, LinkedIn)</li>
-                    <li>Lead Enrichment Tools (Lusha)</li>
+                <ul class="skills-list" id="skills-list">
+                    <li class="editable" data-field="skill1"><span class="field-content">B2B Lead Generation Strategy</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill2"><span class="field-content">HubSpot & Pipedrive CRM</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill3"><span class="field-content">LinkedIn Sales Navigator</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill4"><span class="field-content">Cold Calling & Telemarketing</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill5"><span class="field-content">Appointment Setting & Qualification (BANT/MEDDIC)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill6"><span class="field-content">Pipeline Management & Forecasting</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill7"><span class="field-content">Sales Reporting & Data Analysis</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill8"><span class="field-content">Client Relationship Management</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill9"><span class="field-content">Multi-Channel Outreach (Email, LinkedIn)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                    <li class="editable" data-field="skill10"><span class="field-content">Lead Enrichment Tools (Lusha)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
                 </ul>
 
                 <div class="section-title mt-4">Education</div>
                 <div class="education-item">
-                    <p class="mb-1"><strong>BS Electrical Engineering</strong></p>
-                    <p class="mb-0">University of Cebu, Philippines</p>
-                    <p class="date">2009 - 2014</p>
+                    <p class="mb-1 editable" data-field="degree"><strong><span class="field-content">BS Electrical Engineering</span></strong><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="mb-0 editable" data-field="school"><span class="field-content">University of Cebu, Philippines</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                    <p class="date editable" data-field="education-date"><span class="field-content">2009 - 2014</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
                 </div>
             </div>
 
             <div class="right-content">
                 <div class="main-header mb-4">
-                    <h1>Flynn James Q. Pontino</h1>
-                    <p class="job-title">B2B Sales Development Representative | Pipeline Specialist</p>
+                    <h1 class="editable" data-field="name"><span class="field-content">Flynn James Q. Pontino</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></h1>
+                    <p class="job-title editable" data-field="job-title"><span class="field-content">B2B Sales Development Representative | Pipeline Specialist</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
                 </div>
 
                 <div class="section">
                     <div class="section-title">Profile</div>
-                    <p class="profile-text">Highly accomplished B2B Sales Development Representative with <strong>9+ years of proven success</strong> in driving revenue growth through strategic lead generation and meticulous pipeline management. Expert in penetrating competitive markets, cultivating key relationships, and securing qualified appointments via targeted <strong>multi-channel outreach (cold calling, email, LinkedIn)</strong>. Proficient in <strong>HubSpot & Pipedrive CRM</strong>, leveraging data analytics to optimize performance and consistently <strong>exceed client objectives</strong>. Focused on delivering quantifiable results and maximizing ROI.</p>
+                    <p class="profile-text editable" data-field="profile"><span class="field-content">Highly accomplished B2B Sales Development Representative with <strong>9+ years of proven success</strong> in driving revenue growth through strategic lead generation and meticulous pipeline management. Expert in penetrating competitive markets, cultivating key relationships, and securing qualified appointments via targeted <strong>multi-channel outreach (cold calling, email, LinkedIn)</strong>. Proficient in <strong>HubSpot & Pipedrive CRM</strong>, leveraging data analytics to optimize performance and consistently <strong>exceed client objectives</strong>. Focused on delivering quantifiable results and maximizing ROI.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
                 </div>
 
                 <div class="section mt-4">
                     <div class="section-title">Experience</div>
 
                     <div class="experience-item">
-                        <h3>Delegate Sales Acquisition</h3>
-                        <p class="company">Public Sector Network (AU & US Campaigns)</p>
-                        <span class="date">Nov 2022 – Jan 2025</span>
+                        <h3 class="editable" data-field="exp1-title"><span class="field-content">Delegate Sales Acquisition</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></h3>
+                        <p class="company editable" data-field="exp1-company"><span class="field-content">Public Sector Network (AU & US Campaigns)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                        <span class="date editable" data-field="exp1-date"><span class="field-content">Nov 2022 – Jan 2025</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></span>
                         <ul>
-                            <li><strong>Exceeded delegate acquisition targets by 15%+</strong> for events through targeted multi-channel outreach.</li>
-                            <li>Achieved a <strong>20% lead-to-attendee conversion rate</strong> by effective qualification and value communication.</li>
-                            <li>Managed end-to-end lead lifecycle in <strong>HubSpot CRM</strong>, improving data accuracy by 30%.</li>
-                            <li>Utilized <strong>LinkedIn Sales Navigator & Lusha</strong> for precise prospecting and decision-maker identification.</li>
-                            <li>Developed outreach scripts, increasing positive response rates by 25%.</li>
+                            <li class="editable" data-field="exp1-detail1"><span class="field-content"><strong>Exceeded delegate acquisition targets by 15%+</strong> for events through targeted multi-channel outreach.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp1-detail2"><span class="field-content">Achieved a <strong>20% lead-to-attendee conversion rate</strong> by effective qualification and value communication.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp1-detail3"><span class="field-content">Managed end-to-end lead lifecycle in <strong>HubSpot CRM</strong>, improving data accuracy by 30%.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp1-detail4"><span class="field-content">Utilized <strong>LinkedIn Sales Navigator & Lusha</strong> for precise prospecting and decision-maker identification.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp1-detail5"><span class="field-content">Developed outreach scripts, increasing positive response rates by 25%.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
                         </ul>
                     </div>
 
                     <div class="experience-item">
-                        <h3>Client Acquisition Manager | SDR</h3>
-                        <p class="company">Pacific Outsource Teleservices (BPO)</p>
-                        <span class="date">Mar 2015 – Jan 2022</span>
+                        <h3 class="editable" data-field="exp2-title"><span class="field-content">Client Acquisition Manager | SDR</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></h3>
+                        <p class="company editable" data-field="exp2-company"><span class="field-content">Pacific Outsource Teleservices (BPO)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                        <span class="date editable" data-field="exp2-date"><span class="field-content">Mar 2015 – Jan 2022</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></span>
                         <ul>
-                            <li>Directed lead generation campaigns for <strong>30+ B2B clients</strong> across Tech, Marketing, and Logistics sectors.</li>
-                            <li>Generated <strong>100+ qualified B2B leads weekly</strong> through disciplined cold calling (100+ dials/day).</li>
-                            <li>Scheduled <strong>40+ qualified appointments monthly</strong>, consistently exceeding client KPIs by 10%+.</li>
-                            <li>Maintained <strong>95% client satisfaction</strong> via effective communication and consistent results delivery.</li>
-                            <li>Mastered <strong>HubSpot CRM</strong> for comprehensive multi-campaign management and pipeline reporting.</li>
+                            <li class="editable" data-field="exp2-detail1"><span class="field-content">Directed lead generation campaigns for <strong>30+ B2B clients</strong> across Tech, Marketing, and Logistics sectors.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp2-detail2"><span class="field-content">Generated <strong>100+ qualified B2B leads weekly</strong> through disciplined cold calling (100+ dials/day).</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp2-detail3"><span class="field-content">Scheduled <strong>40+ qualified appointments monthly</strong>, consistently exceeding client KPIs by 10%+.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp2-detail4"><span class="field-content">Maintained <strong>95% client satisfaction</strong> via effective communication and consistent results delivery.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp2-detail5"><span class="field-content">Mastered <strong>HubSpot CRM</strong> for comprehensive multi-campaign management and pipeline reporting.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
                         </ul>
                     </div>
 
                     <div class="experience-item">
-                        <h3>Sales & Customer Service Representative</h3>
-                        <p class="company">Global Empire Corporation</p>
-                        <span class="date">Sep 2014 – Sep 2015</span>
+                        <h3 class="editable" data-field="exp3-title"><span class="field-content">Sales & Customer Service Representative</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></h3>
+                        <p class="company editable" data-field="exp3-company"><span class="field-content">Global Empire Corporation</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></p>
+                        <span class="date editable" data-field="exp3-date"><span class="field-content">Sep 2014 – Sep 2015</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></span>
                         <ul>
-                            <li>Achieved <strong>top agent status</strong> within 6 months by exceeding sales targets (100%+ quota).</li>
-                            <li>Managed <strong>60+ daily customer interactions</strong>, improving CSAT scores by 15%.</li>
-                            <li>Reduced customer churn by 10% through proactive service and relationship building.</li>
-                            <li>Awarded "Employee of the Month" twice for outstanding performance.</li>
+                            <li class="editable" data-field="exp3-detail1"><span class="field-content">Achieved <strong>top agent status</strong> within 6 months by exceeding sales targets (100%+ quota).</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp3-detail2"><span class="field-content">Managed <strong>60+ daily customer interactions</strong>, improving CSAT scores by 15%.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp3-detail3"><span class="field-content">Reduced customer churn by 10% through proactive service and relationship building.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                            <li class="editable" data-field="exp3-detail4"><span class="field-content">Awarded "Employee of the Month" twice for outstanding performance.</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
                         </ul>
                     </div>
                 </div>
@@ -815,12 +1000,12 @@
                 <div class="section mt-4">
                     <div class="section-title">Quantifiable Achievements</div>
                     <ul>
-                        <li><strong>15%+</strong>: Exceeded Appointment/Event Goals</li>
-                        <li><strong>20%+</strong>: Achieved QoQ Growth in Sales Qualified Leads (SQLs)</li>
-                        <li><strong>90%+</strong>: Maintained Client Retention Rate</li>
-                        <li><strong>30%</strong>: Improved CRM Data Accuracy</li>
-                        <li><strong>100+</strong>: Managed High-Volume Outreach (Calls/Day)</li>
-                        <li>Consistently Surpassed Revenue & Lead Targets</li>
+                        <li class="editable" data-field="achievement1"><span class="field-content"><strong>15%+</strong>: Exceeded Appointment/Event Goals</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                        <li class="editable" data-field="achievement2"><span class="field-content"><strong>20%+</strong>: Achieved QoQ Growth in Sales Qualified Leads (SQLs)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                        <li class="editable" data-field="achievement3"><span class="field-content"><strong>90%+</strong>: Maintained Client Retention Rate</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                        <li class="editable" data-field="achievement4"><span class="field-content"><strong>30%</strong>: Improved CRM Data Accuracy</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                        <li class="editable" data-field="achievement5"><span class="field-content"><strong>100+</strong>: Managed High-Volume Outreach (Calls/Day)</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
+                        <li class="editable" data-field="achievement6"><span class="field-content">Consistently Surpassed Revenue & Lead Targets</span><span class="edit-icon"><i class="fas fa-pencil-alt"></i></span></li>
                     </ul>
                 </div>
             </div>
@@ -831,6 +1016,75 @@
         <button class="btn-download-pdf" onclick="window.print()">
             <i class="fas fa-file-pdf me-2"></i> Download as PDF
         </button>
+    </div>
+
+    <!-- Floating Edit Button -->
+    <div class="floating-edit-button" id="floatingEditButton">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <!-- Edit Tray -->
+    <div class="edit-tray" id="editTray">
+        <h3>Edit Resume Content</h3>
+        
+        <div class="edit-section-title">Personal Information</div>
+        <div class="edit-form-group">
+            <label for="edit-name">Full Name</label>
+            <input type="text" id="edit-name" class="edit-field" data-field="name">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-job-title">Job Title</label>
+            <input type="text" id="edit-job-title" class="edit-field" data-field="job-title">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-profile">Profile Summary</label>
+            <textarea id="edit-profile" class="edit-field" data-field="profile"></textarea>
+        </div>
+        
+        <div class="edit-section-title">Contact Information</div>
+        <div class="edit-form-group">
+            <label for="edit-phone">Phone</label>
+            <input type="text" id="edit-phone" class="edit-field" data-field="phone">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-email">Email</label>
+            <input type="text" id="edit-email" class="edit-field" data-field="email">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-location">Location</label>
+            <input type="text" id="edit-location" class="edit-field" data-field="location">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-linkedin">LinkedIn</label>
+            <input type="text" id="edit-linkedin" class="edit-field" data-field="linkedin">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-website1">Website 1</label>
+            <input type="text" id="edit-website1" class="edit-field" data-field="website1">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-website2">Website 2</label>
+            <input type="text" id="edit-website2" class="edit-field" data-field="website2">
+        </div>
+        
+        <div class="edit-section-title">Education</div>
+        <div class="edit-form-group">
+            <label for="edit-degree">Degree</label>
+            <input type="text" id="edit-degree" class="edit-field" data-field="degree">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-school">School</label>
+            <input type="text" id="edit-school" class="edit-field" data-field="school">
+        </div>
+        <div class="edit-form-group">
+            <label for="edit-education-date">Date</label>
+            <input type="text" id="edit-education-date" class="edit-field" data-field="education-date">
+        </div>
+        
+        <div class="edit-tray-buttons">
+            <button class="btn-cancel" id="btnCancelEdit">Cancel</button>
+            <button class="btn-save" id="btnSaveEdit">Save Changes</button>
+        </div>
     </div>
 
     <script>
@@ -899,6 +1153,126 @@
                 
                 reader.readAsDataURL(e.target.files[0]);
             }
+        });
+        
+        // Edit functionality
+        const floatingEditButton = document.getElementById('floatingEditButton');
+        const editTray = document.getElementById('editTray');
+        const btnCancelEdit = document.getElementById('btnCancelEdit');
+        const btnSaveEdit = document.getElementById('btnSaveEdit');
+        const editFields = document.querySelectorAll('.edit-field');
+        
+        // Toggle edit tray
+        floatingEditButton.addEventListener('click', function() {
+            editTray.classList.toggle('open');
+        });
+        
+        // Close edit tray
+        btnCancelEdit.addEventListener('click', function() {
+            editTray.classList.remove('open');
+        });
+        
+        // Save changes
+        btnSaveEdit.addEventListener('click', function() {
+            // Update all fields from the edit form
+            editFields.forEach(field => {
+                const fieldId = field.getAttribute('data-field');
+                const fieldValue = field.value;
+                
+                // Update all elements with this data-field attribute
+                const targetElements = document.querySelectorAll(`[data-field="${fieldId}"] .field-content`);
+                targetElements.forEach(element => {
+                    element.innerHTML = fieldValue;
+                });
+                
+                // Special handling for links
+                if (fieldId === 'email') {
+                    const emailLink = document.querySelector(`[data-field="${fieldId}"] a`);
+                    if (emailLink) {
+                        emailLink.href = `mailto:${fieldValue}`;
+                    }
+                } else if (fieldId === 'linkedin' || fieldId === 'website1' || fieldId === 'website2') {
+                    const linkElement = document.querySelector(`[data-field="${fieldId}"] a`);
+                    if (linkElement) {
+                        linkElement.href = fieldValue;
+                    }
+                }
+            });
+            
+            // Close the tray
+            editTray.classList.remove('open');
+        });
+        
+        // Initialize edit form with current values
+        function initializeEditForm() {
+            editFields.forEach(field => {
+                const fieldId = field.getAttribute('data-field');
+                const targetElement = document.querySelector(`[data-field="${fieldId}"] .field-content`);
+                
+                if (targetElement) {
+                    field.value = targetElement.innerHTML;
+                    
+                    // Special handling for links
+                    if (fieldId === 'email') {
+                        const emailLink = document.querySelector(`[data-field="${fieldId}"] a`);
+                        if (emailLink) {
+                            field.value = emailLink.textContent;
+                        }
+                    } else if (fieldId === 'linkedin' || fieldId === 'website1' || fieldId === 'website2') {
+                        const linkElement = document.querySelector(`[data-field="${fieldId}"] a`);
+                        if (linkElement) {
+                            field.value = linkElement.href;
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEditForm();
+        });
+        
+        // Handle direct editing via edit icons
+        document.querySelectorAll('.edit-icon').forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                const parentElement = this.parentElement;
+                const fieldId = parentElement.getAttribute('data-field');
+                const fieldContent = parentElement.querySelector('.field-content');
+                
+                // Find the corresponding input in the edit tray
+                const correspondingInput = document.querySelector(`.edit-field[data-field="${fieldId}"]`);
+                
+                if (correspondingInput) {
+                    // Update the input value
+                    correspondingInput.value = fieldContent.innerHTML;
+                    
+                    // Special handling for links
+                    if (fieldId === 'email') {
+                        const emailLink = parentElement.querySelector('a');
+                        if (emailLink) {
+                            correspondingInput.value = emailLink.textContent;
+                        }
+                    } else if (fieldId === 'linkedin' || fieldId === 'website1' || fieldId === 'website2') {
+                        const linkElement = parentElement.querySelector('a');
+                        if (linkElement) {
+                            correspondingInput.value = linkElement.href;
+                        }
+                    }
+                    
+                    // Open the edit tray
+                    editTray.classList.add('open');
+                    
+                    // Scroll to the corresponding input
+                    correspondingInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Highlight the input
+                    correspondingInput.focus();
+                    correspondingInput.select();
+                }
+            });
         });
     </script>
 
