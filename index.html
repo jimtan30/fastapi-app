@@ -3,490 +3,905 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop Wasting Money on Marketing: Proven Leads & Sales for Singapore SMEs</title>
-    <meta name="description" content="Singapore SME struggling online? Download our FREE Playbook & get a Marketing Audit to fix your lead generation & boost sales - without wasting your budget.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder - Flynn James Pontino</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <style>
-        /* Basic CSS + Pop-up Styles (same as before, ensuring all styles are included) */
-        body { font-family: sans-serif; margin: 0; color: #333; }
-        .container { width: 90%; max-width: 1200px; margin: auto; padding: 20px; }
-        .hero { background-color: #f8f8f8; padding: 50px 0; text-align: center; }
-        .headline { font-size: 2.5em; color: #3333ff; margin-bottom: 10px; }
-        .subheadline { font-size: 1.2em; color: #555; margin-bottom: 20px; }
-        .cta-button { background-color: #3333ff; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; cursor: pointer; }
-        .cta-button:hover { background-color: #2929cc; }
-        .pain-points-section { background-color: white; padding: 30px 0; text-align: center; }
-        .pain-points-list { list-style: none; padding: 0; margin-bottom: 20px; }
-        .pain-points-list li { margin-bottom: 10px; font-size: 1.1em; color: #555; }
-        .solution-section { background-color: #eef; padding: 30px 0; text-align: center; }
-        .solution-section h2 { color: #3333ff; }
-        .solution-item { margin-bottom: 20px; }
-        .how-we-solve-section { background-color: #fff; padding: 30px 0; }
-        .how-we-solve-list { list-style: none; padding: 0; }
-        .how-we-solve-list li { margin-bottom: 15px; display: flex; align-items: flex-start; }
-        .how-we-solve-list li strong { color: #333; margin-right: 10px; min-width: 200px; display: inline-block; }
-        .social-proof { margin-top: 30px; text-align: center; color: #777; }
-        .trust-logos { display: flex; justify-content: center; margin-top: 10px; }
-        .trust-logos img { height: 50px; margin: 0 15px; opacity: 0.7; }
-        .urgency-cta { background-color: #f8f8f8; padding: 40px 0; text-align: center; }
-        .urgency-bonus { color: #ff4d4d; font-weight: bold; margin-bottom: 20px; }
-        .form-section { background-color: #fff; padding: 40px 0; }
-        .form-container { max-width: 600px; margin: auto; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        .form-group textarea { height: 100px; }
-        .submit-button { background-color: #3333ff; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1.1em; }
-        .submit-button:hover { background-color: #2929cc; }
-        .sticky-cta { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #3333ff; color: white; text-align: center; padding: 15px 0; z-index: 100; display: none; }
-        .sticky-cta a { color: white; text-decoration: none; font-weight: bold; }
-        .guarantee-section { background-color: #ffe; padding: 40px 0; text-align: center; border: 2px solid #ffdd88; border-radius: 10px; margin-top: 30px;}
-        .guarantee-badge { background-color: #ffcc66; color: #333; padding: 10px 20px; border-radius: 5px; font-weight: bold; display: inline-block; margin-bottom: 20px; }
-        .video-testimonials-section { background-color: #f8f8f8; padding: 40px 0; text-align: center;}
-        .video-testimonial { margin-bottom: 30px; }
-        .video-testimonial iframe { width: 100%; max-width: 560px; height: 315px; }
-        .team-bios-section { background-color: #fff; padding: 40px 0; text-align: center;}
-        .team-bios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 20px auto 0; }
-        .team-member { text-align: center; }
-        .team-member img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
-        .case-study-section { background-color: #eef; padding: 40px 0; text-align: center;}
-        .case-study-cta { margin-top: 20px; }
-
-        @media (max-width: 768px) {
-            .headline { font-size: 2em; }
-            .subheadline { font-size: 1em; }
-            .trust-logos img { height: 40px; }
-            .sticky-cta { display: block; }
+        :root {
+            --primary-blue: #0A66C2;
+            --secondary-blue: #001c41;
+            --light-blue-bg: #e0f2f7;
+            --text-dark: #333;
+            --text-light: #fff;
+            --section-header-bg: #0A66C2;
+            --section-header-text: #fff;
+            --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
 
-        /* Pop-up Styles (same as before) */
-        .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; overflow: auto; }
-        .popup-content { background-color: white; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 500px; border-radius: 10px; position: relative; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); animation: fadeIn 0.3s; }
-        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-        .popup-close-button { color: #aaa; position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; cursor: pointer; }
-        .popup-close-button:hover, .popup-close-button:focus { color: black; text-decoration: none; cursor: pointer; }
-        .popup-headline { font-size: 1.8em; color: #3333ff; margin-bottom: 15px; text-align: center; }
-        .popup-solution-list { list-style: disc; padding-left: 20px; margin-bottom: 15px; }
-        .popup-solution-list li { margin-bottom: 8px; font-size: 1.05em; }
-        .popup-urgency { color: #ff4d4d; font-weight: bold; margin-bottom: 20px; text-align: center; }
-        .popup-form-group { margin-bottom: 15px; }
-        .popup-form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .popup-form-group input, .popup-form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        .popup-form-group textarea { height: 80px; }
-        .popup-submit-button { background-color: #3333ff; color: white; border: none; padding: 12px 25px; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1em; display: block; width: 100%; text-align: center; }
-        .popup-submit-button:hover { background-color: #2929cc; }
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f4f7f6;
+            transition: background-color 0.5s ease;
+            position: relative;
+            min-height: 100vh;
+        }
 
+        body.background-image::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .controls-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .template-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .template-option {
+            flex: 1;
+            min-width: 150px;
+            max-width: 160px;
+            padding: 15px 10px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .template-option:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .template-option.active {
+            border-color: var(--primary-blue);
+            background-color: var(--light-blue-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .template-option .template-preview {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .template-option .template-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .background-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .bg-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .bg-option:hover {
+            transform: scale(1.1);
+        }
+
+        .bg-option.active {
+            border-color: #333;
+            transform: scale(1.1);
+        }
+
+        .image-upload {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .image-upload-label:hover {
+            transform: scale(1.1);
+        }
+
+        .image-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .resume-wrapper {
+            max-width: 900px;
+            margin: 30px auto;
+            position: relative;
+        }
+
+        .resume-container {
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: row;
+            transition: all 0.3s ease;
+        }
+
+        .left-sidebar {
+            width: 35%;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .right-content {
+            width: 65%;
+            padding: 30px 25px;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .right-content .section-title {
+            padding: 10px 15px;
+            margin-left: -25px;
+            margin-right: -25px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .contact-info p, .skills-list li, .education-item p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i, .skills-list i {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .skills-list li::before {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            font-size: 0.9em;
+        }
+
+        .main-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .main-header .job-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .profile-text {
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .experience-item, .education-item-right {
+            margin-bottom: 25px;
+        }
+
+        .experience-item h3, .education-item-right h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company, .education-item-right .school {
+            font-weight: 500;
+            margin-bottom: 3px;
+            font-size: 1.05rem;
+        }
+
+        .experience-item .date, .education-item-right .date {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .experience-item ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 5px;
+        }
+        
+        .pdf-button-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .btn-download-pdf {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-download-pdf:hover {
+            background-color: #074a8c;
+        }
+
+        /* Template 1: Default Blue (Original) */
+        .template-default .left-sidebar {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+        }
+        .template-default .right-content .section-title {
+            background-color: var(--section-header-bg);
+            color: var(--section-header-text);
+        }
+        .template-default .main-header h1 {
+            color: var(--primary-blue);
+        }
+        .template-default .experience-item h3,
+        .template-default .education-item-right h3 {
+            color: var(--primary-blue);
+        }
+        .template-default .section-title {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .template-default .skills-list li::before {
+            content: "\f00c";
+            color: var(--text-light);
+        }
+        .template-default .contact-info a {
+            color: var(--text-light);
+        }
+        .template-default .experience-item .company,
+        .template-default .education-item-right .school {
+            color: #666;
+        }
+        .template-default .experience-item .date,
+        .template-default .education-item-right .date {
+            color: #888;
+        }
+
+        /* Template 2: Modern Minimalist */
+        .template-minimalist .resume-container {
+            flex-direction: column;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+        }
+        .template-minimalist .left-sidebar {
+            width: 100%;
+            background: #f9f9f9;
+            color: #2c3e50;
+            padding: 25px;
+            text-align: center;
+        }
+        .template-minimalist .right-content {
+            width: 100%;
+            padding: 25px;
+        }
+        .template-minimalist .main-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+        .template-minimalist .main-header h1 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+        .template-minimalist .main-header .job-title {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+        .template-minimalist .right-content .section-title {
+            background: none;
+            color: #2c3e50;
+            border-bottom: 2px solid #e0e0e0;
+            margin: 0 0 20px 0;
+            padding: 0 0 10px 0;
+            box-shadow: none;
+            text-align: left;
+        }
+        .template-minimalist .section-title {
+            border-bottom: 2px solid #e0e0e0;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .template-minimalist .experience-item h3,
+        .template-minimalist .education-item-right h3 {
+            color: #2c3e50;
+        }
+        .template-minimalist .skills-list li::before {
+            content: "\f105";
+            color: #2c3e50;
+        }
+        .template-minimalist .contact-info a {
+            color: #3498db;
+        }
+        .template-minimalist .profile-photo {
+            border: 3px solid #e0e0e0;
+            width: 120px;
+            height: 120px;
+        }
+
+        /* Template 3: Professional Green */
+        .template-green .resume-container {
+            background: #fff;
+            border-left: 5px solid #1a5f7a;
+        }
+        .template-green .left-sidebar {
+            background: #f8fbfc;
+            color: #1a5f7a;
+            border-right: 1px solid #e0f2f1;
+        }
+        .template-green .right-content .section-title {
+            background: linear-gradient(to right, #1a5f7a, #2d8da7);
+            color: white;
+        }
+        .template-green .main-header h1 {
+            color: #1a5f7a;
+            border-bottom: 2px solid #1a5f7a;
+            padding-bottom: 10px;
+        }
+        .template-green .experience-item h3,
+        .template-green .education-item-right h3 {
+            color: #1a5f7a;
+        }
+        .template-green .section-title {
+            color: #1a5f7a;
+            border-bottom: 2px solid #1a5f7a;
+        }
+        .template-green .skills-list li::before {
+            content: "\f058";
+            color: #1a5f7a;
+        }
+        .template-green .contact-info a {
+            color: #1a5f7a;
+        }
+        .template-green .profile-photo {
+            border: 4px solid #1a5f7a;
+        }
+
+        /* Template 4: Creative Orange */
+        .template-orange .resume-container {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .template-orange .left-sidebar {
+            background: linear-gradient(to bottom, #e67e22, #d35400);
+            color: white;
+        }
+        .template-orange .right-content .section-title {
+            background: #fef5eb;
+            color: #e67e22;
+            border-left: 4px solid #e67e22;
+        }
+        .template-orange .main-header h1 {
+            color: #e67e22;
+        }
+        .template-orange .experience-item h3,
+        .template-orange .education-item-right h3 {
+            color: #e67e22;
+        }
+        .template-orange .section-title {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .template-orange .skills-list li::before {
+            content: "\f5fd";
+            color: white;
+        }
+        .template-orange .contact-info a {
+            color: white;
+        }
+        .template-orange .experience-item .company,
+        .template-orange .education-item-right .school {
+            color: #7f8c8d;
+        }
+        .template-orange .profile-photo {
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Template 5: Elegant Purple */
+        .template-purple .resume-container {
+            background: #fff;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        .template-purple .left-sidebar {
+            background: #6c5ce7;
+            color: white;
+            position: relative;
+        }
+        .template-purple .left-sidebar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(108, 92, 231, 0.5), transparent);
+        }
+        .template-purple .right-content .section-title {
+            background: none;
+            color: #6c5ce7;
+            border-bottom: 2px solid #6c5ce7;
+            margin: 0 0 25px 0;
+            padding: 0 0 10px 0;
+            box-shadow: none;
+        }
+        .template-purple .main-header h1 {
+            color: #6c5ce7;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        .template-purple .main-header .job-title {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        .template-purple .experience-item h3,
+        .template-purple .education-item-right h3 {
+            color: #6c5ce7;
+            border-left: 3px solid #6c5ce7;
+            padding-left: 10px;
+        }
+        .template-purple .section-title {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .template-purple .skills-list li::before {
+            content: "\f005";
+            color: white;
+            font-size: 0.7em;
+        }
+        .template-purple .contact-info a {
+            color: white;
+        }
+        .template-purple .profile-photo {
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #a29bfe;
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                flex-direction: column;
+                margin: 15px auto;
+                width: 95%;
+            }
+            .left-sidebar, .right-content {
+                width: 100%;
+                padding: 20px 15px;
+            }
+            .right-content .section-title {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            .main-header .job-title {
+                font-size: 1.2rem;
+            }
+            .template-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+            .template-option {
+                max-width: 100%;
+            }
+            
+            .template-minimalist .resume-container,
+            .template-green .resume-container,
+            .template-orange .resume-container,
+            .template-purple .resume-container {
+                flex-direction: column;
+            }
+        }
+
+        @media print {
+            .controls-container {
+                display: none;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #fff;
+            }
+            .resume-wrapper {
+                margin: 0;
+                width: 100%;
+            }
+            .resume-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+            }
+            .left-sidebar {
+                padding: 20px;
+            }
+            .right-content {
+                padding: 20px;
+            }
+            .btn-download-pdf {
+                display: none !important;
+            }
+            
+            /* Print styles for templates */
+            .template-default .right-content .section-title {
+                 background-color: #e0f2f7 !important;
+                 color: #333 !important;
+            }
+            .template-default .left-sidebar {
+                background-color: #cce7ff !important;
+                color: #333 !important;
+            }
+            .template-default .contact-info a {
+                color: #333 !important;
+            }
+            .template-default .skills-list li::before {
+                color: #0A66C2 !important;
+            }
+            
+            .template-minimalist .left-sidebar {
+                background: #f9f9f9 !important;
+            }
+            
+            .template-green .right-content .section-title {
+                background: #e0f2f1 !important;
+                color: #1a5f7a !important;
+            }
+            
+            .template-orange .left-sidebar {
+                background: #ffe0b2 !important;
+                color: #333 !important;
+            }
+            .template-orange .contact-info a {
+                color: #333 !important;
+            }
+            
+            .template-purple .left-sidebar {
+                background: #d1c4e9 !important;
+                color: #333 !important;
+            }
+            .template-purple .contact-info a {
+                color: #333 !important;
+            }
+            
+            /* Ensure print color adjustment */
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <section class="hero">
-        <div class="container">
-            <h1 class="headline">We Help Singapore SMEs Get More Leads & Sales – Fast!</h1>
-            <p class="subheadline">Most SMEs waste money on ads that don’t work. Get our free playbook to discover proven strategies that generate real customers – without burning your budget.</p>
-            <a href="#" class="cta-button" data-popup-id="heroPopup">Fix My Marketing Now!</a>
-        </div>
-    </section>
-
-    <section class="pain-points-section">
-        <div class="container">
-            <ul class="pain-points-list">
-                <li>❌ "We’re spending on ads, but getting no results."</li>
-                <li>❌ "SEO takes forever, and we don’t have time to figure it out."</li>
-                <li>❌ "Competitors are getting leads while we’re stuck."</li>
-            </ul>
-            <p>👉 Sound familiar? You’re not alone.</p>
-            <p>Most SMEs struggle with digital marketing because of poor targeting, ineffective ad strategies, and no clear system to convert visitors into leads.</p>
-            <p>💡 We’ve helped 100+ Singapore businesses fix these exact problems – and we can help you too.</p>
-            <a href="#" class="cta-button" data-popup-id="painPointsPopup">Show Me the Fix!</a>
-        </div>
-    </section>
-
-    <section id="solution-section" class="solution-section">
-        <div class="container">
-            <h2>The Proven Solution (Get These FREE Resources)</h2>
-            <div class="solution-item">
-                <h3>📘 Free Digital Marketing Playbook (2024 Edition)</h3>
-                <p>Learn the exact steps successful SMEs are using to attract customers and boost sales, laid out in an easy-to-follow playbook.</p>
+    <div class="controls-container">
+        <h4>Choose a Template:</h4>
+        <div class="template-selector">
+            <div class="template-option active" data-template="default">
+                <div class="template-preview" style="background: linear-gradient(135deg, #0A66C2, #001c41);"></div>
+                <div class="template-name">Default Blue</div>
             </div>
-            <div class="solution-item">
-                <h3>📊 Custom SME Marketing Audit</h3>
-                <p>Find out exactly what’s blocking your business from getting leads and discover hidden growth opportunities with our mini-audit.</p>
+            <div class="template-option" data-template="minimalist">
+                <div class="template-preview" style="background: linear-gradient(135deg, #f9f9f9, #e0e0e0); border: 1px solid #ddd;"></div>
+                <div class="template-name">Modern Minimalist</div>
             </div>
-            <div class="solution-item">
-                <h3>💡 Real Case Study: 200+ Leads in 30 Days</h3>
-                <p>See how we helped a local Singapore business generate over 200+ leads in just 30 days – and how you can replicate their success.</p>
-                <div class="case-study-cta">
-                    <a href="#case-study-download" class="cta-button">Download Detailed Case Study</a> <!-- Keep as is - not a pop-up CTA -->
-                </div>
+            <div class="template-option" data-template="green">
+                <div class="template-preview" style="background: linear-gradient(135deg, #1a5f7a, #2d8da7);"></div>
+                <div class="template-name">Professional Green</div>
             </div>
-            <p>🔥 No fluff. Just real, actionable strategies that work for Singapore SMEs.</p>
-            <a href="#" class="cta-button" data-popup-id="solutionPopup">Get My Free Marketing Guide!</a>
-        </div>
-    </section>
-
-    <section class="how-we-solve-section">
-        <div class="container">
-            <h2>How We Solve These Challenges for Your SME</h2>
-            <ul class="how-we-solve-list">
-                <li><strong>Tired of Wasting Money on Ads?</strong> → Get a clear, data-driven marketing strategy that actually converts ad spend into paying customers.</li>
-                <li><strong>No SEO Knowledge?</strong> → We provide simple, step-by-step actions to improve your online visibility without needing to be an SEO expert.</li>
-                <li><strong>Competitors Getting More Leads?</strong> → Learn proven tactics to outperform your competitors and capture more of your target market online.</li>
-            </ul>
-            <p>🚀 This is the same framework used by successful Singapore SMEs to scale FAST and dominate their market.</p>
-            <a href="#" class="cta-button" data-popup-id="howWeSolvePopup">Send Me the Solution!</a>
-        </div>
-    </section>
-
-    <section id="guarantee-section" class="guarantee-section">
-        <div class="container">
-            <div class="guarantee-badge">30-Day Lead Guarantee</div>
-            <h2>Get 5-10+ Qualified Leads in 30 Days, Or We Work For Free.</h2>
-            <p style="font-size: 1.1em; color: #555;">We are so confident in our strategies, we guarantee results. If you don't see at least 5-10 qualified leads within the first 30 days of implementing our playbook strategies (and/or using our services), we will continue working with you for free until you do.</p>
-        </div>
-    </section>
-
-    <section id="video-testimonials-section" class="video-testimonials-section">
-        <div class="container">
-            <h2>Hear From Singapore SMEs Just Like You</h2>
-            <p style="font-size: 1.1em; color: #555; margin-bottom: 30px;">See how we've helped local businesses achieve real results with our proven strategies.</p>
-            <div class="video-testimonial">
-                <h3>[Client Name 1], [Client Company 1]</h3>
-                <iframe src="VIDEO_URL_1" frameborder="0" allowfullscreen></iframe>
+            <div class="template-option" data-template="orange">
+                <div class="template-preview" style="background: linear-gradient(135deg, #e67e22, #d35400);"></div>
+                <div class="template-name">Creative Orange</div>
             </div>
-            <div class="video-testimonial">
-                <h3>[Client Name 2], [Client Company 2]</h3>
-                <iframe src="VIDEO_URL_2" frameborder="0" allowfullscreen></iframe>
+            <div class="template-option" data-template="purple">
+                <div class="template-preview" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);"></div>
+                <div class="template-name">Elegant Purple</div>
             </div>
         </div>
-    </section>
+        
+        <h4>Change Background:</h4>
+        <div class="background-selector">
+            <div class="bg-option active" style="background-color: #f4f7f6;" data-bg="#f4f7f6"></div>
+            <div class="bg-option" style="background-color: #f0f8ff;" data-bg="#f0f8ff"></div>
+            <div class="bg-option" style="background-color: #f5f5f5;" data-bg="#f5f5f5"></div>
+            <div class="bg-option" style="background-color: #fffaf0;" data-bg="#fffaf0"></div>
+            <div class="bg-option" style="background-color: #f0fff0;" data-bg="#f0fff0"></div>
+            <div class="bg-option" style="background-color: #faf0e6;" data-bg="#faf0e6"></div>
+            
+            <div class="image-upload">
+                <label for="bg-image-upload" class="image-upload-label">
+                    <i class="fas fa-image"></i>
+                </label>
+                <input type="file" id="bg-image-upload" accept="image/*">
+            </div>
+        </div>
+    </div>
 
-    <section id="team-bios-section" class="team-bios-section">
-        <div class="container">
-            <h2>Meet Your Growth Team</h2>
-            <p style="font-size: 1.1em; color: #555; margin-bottom: 30px;">Experienced digital marketing experts dedicated to helping Singaporean SMEs thrive online.</p>
-            <div class="team-bios-grid">
-                <div class="team-member">
-                    <img src="team-member-1.jpg" alt="Team Member 1">
-                    <h3>[Team Member 1 Name]</h3>
-                    <p>[Team Member 1 Title]</p>
-                    <p>[Short Bio - e.g., "10+ years of experience in SME digital marketing, specializing in lead generation strategies."]</p>
+    <div class="resume-wrapper">
+        <div class="resume-container template-default" id="resume">
+            <div class="left-sidebar">
+                <img src="https://i.ibb.co/MySFwBZ6/Flynn-2x2.jpg" alt="Flynn James Q. Pontino" class="profile-photo">
+
+                <div class="section-title">Contact</div>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> +63 930 635 9306</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:jamescarbelledo@gmail.com">jamescarbelledo@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Toledo, Cebu, Philippines | Remote</p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/fjpontino" target="_blank">linkedin.com/in/fjpontino</a></p>
+                    <p><i class="fas fa-globe"></i> <a href="https://flynn-b2b-lead-gen.pages.dev/" target="_blank">My Voice Recordings</a></p>
+                    <p><i class="fas fa-link"></i> <a href="https://flynn-telemarketing-leadgenservices.pages.dev/website" target="_blank">Lead Generation Website</a></p>
                 </div>
-                <div class="team-member">
-                    <img src="team-member-2.jpg" alt="Team Member 2">
-                    <h3>[Team Member 2 Name]</h3>
-                    <p>[Team Member 2 Title]</p>
-                    <p>[Short Bio]</p>
+
+                <div class="section-title mt-4">Skills</div>
+                <ul class="skills-list">
+                    <li>B2B Lead Generation Strategy</li>
+                    <li>HubSpot & Pipedrive CRM</li>
+                    <li>LinkedIn Sales Navigator</li>
+                    <li>Cold Calling & Telemarketing</li>
+                    <li>Appointment Setting & Qualification (BANT/MEDDIC)</li>
+                    <li>Pipeline Management & Forecasting</li>
+                    <li>Sales Reporting & Data Analysis</li>
+                    <li>Client Relationship Management</li>
+                    <li>Multi-Channel Outreach (Email, LinkedIn)</li>
+                    <li>Lead Enrichment Tools (Lusha)</li>
+                </ul>
+
+                <div class="section-title mt-4">Education</div>
+                <div class="education-item">
+                    <p class="mb-1"><strong>BS Electrical Engineering</strong></p>
+                    <p class="mb-0">University of Cebu, Philippines</p>
+                    <p class="date">2009 - 2014</p>
+                </div>
+            </div>
+
+            <div class="right-content">
+                <div class="main-header mb-4">
+                    <h1>Flynn James Q. Pontino</h1>
+                    <p class="job-title">B2B Sales Development Representative | Pipeline Specialist</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Profile</div>
+                    <p class="profile-text">Highly accomplished B2B Sales Development Representative with <strong>9+ years of proven success</strong> in driving revenue growth through strategic lead generation and meticulous pipeline management. Expert in penetrating competitive markets, cultivating key relationships, and securing qualified appointments via targeted <strong>multi-channel outreach (cold calling, email, LinkedIn)</strong>. Proficient in <strong>HubSpot & Pipedrive CRM</strong>, leveraging data analytics to optimize performance and consistently <strong>exceed client objectives</strong>. Focused on delivering quantifiable results and maximizing ROI.</p>
+                </div>
+
+                <div class="section mt-4">
+                    <div class="section-title">Experience</div>
+
+                    <div class="experience-item">
+                        <h3>Delegate Sales Acquisition</h3>
+                        <p class="company">Public Sector Network (AU & US Campaigns)</p>
+                        <span class="date">Nov 2022 – Jan 2025</span>
+                        <ul>
+                            <li><strong>Exceeded delegate acquisition targets by 15%+</strong> for events through targeted multi-channel outreach.</li>
+                            <li>Achieved a <strong>20% lead-to-attendee conversion rate</strong> by effective qualification and value communication.</li>
+                            <li>Managed end-to-end lead lifecycle in <strong>HubSpot CRM</strong>, improving data accuracy by 30%.</li>
+                            <li>Utilized <strong>LinkedIn Sales Navigator & Lusha</strong> for precise prospecting and decision-maker identification.</li>
+                            <li>Developed outreach scripts, increasing positive response rates by 25%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Client Acquisition Manager | SDR</h3>
+                        <p class="company">Pacific Outsource Teleservices (BPO)</p>
+                        <span class="date">Mar 2015 – Jan 2022</span>
+                        <ul>
+                            <li>Directed lead generation campaigns for <strong>30+ B2B clients</strong> across Tech, Marketing, and Logistics sectors.</li>
+                            <li>Generated <strong>100+ qualified B2B leads weekly</strong> through disciplined cold calling (100+ dials/day).</li>
+                            <li>Scheduled <strong>40+ qualified appointments monthly</strong>, consistently exceeding client KPIs by 10%+.</li>
+                            <li>Maintained <strong>95% client satisfaction</strong> via effective communication and consistent results delivery.</li>
+                            <li>Mastered <strong>HubSpot CRM</strong> for comprehensive multi-campaign management and pipeline reporting.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Sales & Customer Service Representative</h3>
+                        <p class="company">Global Empire Corporation</p>
+                        <span class="date">Sep 2014 – Sep 2015</span>
+                        <ul>
+                            <li>Achieved <strong>top agent status</strong> within 6 months by exceeding sales targets (100%+ quota).</li>
+                            <li>Managed <strong>60+ daily customer interactions</strong>, improving CSAT scores by 15%.</li>
+                            <li>Reduced customer churn by 10% through proactive service and relationship building.</li>
+                            <li>Awarded "Employee of the Month" twice for outstanding performance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section mt-4">
+                    <div class="section-title">Quantifiable Achievements</div>
+                    <ul>
+                        <li><strong>15%+</strong>: Exceeded Appointment/Event Goals</li>
+                        <li><strong>20%+</strong>: Achieved QoQ Growth in Sales Qualified Leads (SQLs)</li>
+                        <li><strong>90%+</strong>: Maintained Client Retention Rate</li>
+                        <li><strong>30%</strong>: Improved CRM Data Accuracy</li>
+                        <li><strong>100+</strong>: Managed High-Volume Outreach (Calls/Day)</li>
+                        <li>Consistently Surpassed Revenue & Lead Targets</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="social-proof-section" class="social-proof">
-        <div class="container">
-            ⭐⭐⭐⭐⭐ <strong>Trusted by 100+ Singapore SMEs</strong>
-            <div class="trust-logos">
-                <img src="client-logo-1.png" alt="Client Logo 1">
-                <img src="client-logo-2.png" alt="Client Logo 2">
-                <img src="media-logo-1.png" alt="Media Logo 1">
-                <img src="dbs-logo.png" alt="DBS Bank Logo" style="height: 60px;">
-            </div>
-            <p style="font-style: italic; margin-top: 10px;">"Within 30 days, we generated 200+ leads and increased our revenue by 150% – all thanks to this strategy!" – [Client Name], [Client Company]</p>
-            <a href="#" class="cta-button" data-popup-id="socialProofPopup">I Want These Results Too!</a>
-        </div>
-    </section>
-
-    <section id="urgency-cta-section" class="urgency-cta">
-        <div class="container">
-            <p class="urgency-bonus">⚠ Limited Time Bonus: First 50 sign-ups get a free mini consultation!</p>
-            <h2>Claim Your Playbook + Free Mini Audit Now! (Limited Slots)</h2>
-            <a href="#" class="cta-button" data-popup-id="urgencyPopup">Claim Your Playbook + Free Mini Audit Now!</a>
-        </div>
-    </section>
-
-    <section id="lead-magnet-form" class="form-section" style="display:none;"> <!-- Hide original form - not used directly now -->
-        <div class="container form-container">
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name-inline">Name</label>
-                    <input type="text" id="name-inline" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email-inline">Email</label>
-                    <input type="email" id="email-inline" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="business_name-inline">Business Name</label>
-                    <input type="text" id="business_name-inline" name="business_name" required>
-                </div>
-                <div class="form-group">
-                    <label for="challenge-inline">What’s your biggest marketing challenge? (Optional)</label>
-                    <textarea id="challenge-inline" name="challenge"></textarea>
-                </div>
-                <button type="submit" class="submit-button">Get Instant Access!</button>
-            </form>
-        </div>
-    </section>
-
-    <div class="sticky-cta">
-        <a href="#" class="cta-button" data-popup-id="stickyCTAPopup">👉 Get Your FREE Marketing Guide Now!</a>
     </div>
 
-    <footer>
-        <div class="container" style="text-align: center; padding: 20px 0; color: #777;">
-            <p>© 2024 [Your Company Name]. All rights reserved.</p>
-            <p><a href="/privacy-policy">Privacy Policy</a></p>
-        </div>
-    </footer>
-
-    <!-- Entry Pop-up -->
-    <div id="entryPopup" class="popup-overlay">
-        <div class="popup-content">
-            <span class="popup-close-button entry-popup-close">×</span>
-            <h2 class="popup-headline">👋 Stop Wasting Money on Bad Marketing!</h2>
-            <p>Singapore SME?</p>
-            <p class="popup-urgency">⏰  Limited Time: Get Your FREE Marketing Playbook + Mini Audit NOW!</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-entry">Your Name</label>
-                    <input type="text" id="name-entry" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-entry">Your Email</label>
-                    <input type="email" id="email-entry" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Claim My FREE Resources!</button>
-            </form>
-        </div>
+    <div class="pdf-button-container">
+        <button class="btn-download-pdf" onclick="window.print()">
+            <i class="fas fa-file-pdf me-2"></i> Download as PDF
+        </button>
     </div>
-
-    <!-- CTA Button Pop-ups -->
-
-    <div id="heroPopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">🚀 Fix Your Marketing Today!</h2>
-            <p>Ready to transform your marketing and get real results?</p>
-            <ul class="popup-solution-list">
-                <li><strong>✅ Get Proven Strategies:</strong> Stop guessing, start getting leads.</li>
-                <li><strong>✅ Free Marketing Audit:</strong> Uncover hidden growth opportunities.</li>
-            </ul>
-            <p class="popup-urgency">⏳ Don't wait! Limited slots for free audits this week.</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-hero">Your Name</label>
-                    <input type="text" id="name-hero" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-hero">Your Email</label>
-                    <input type="email" id="email-hero" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Yes, Fix My Marketing!</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="painPointsPopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">😫 Tired of Wasting Ad Money?</h2>
-            <p>Finally, a solution to your marketing frustrations!</p>
-            <ul class="popup-solution-list">
-                <li><strong>📘 Free Playbook:</strong>  Learn how to get leads without wasting budget.</li>
-                <li><strong>📊 Mini-Audit:</strong> Identify why your ads aren't working & how to fix it.</li>
-            </ul>
-            <p class="popup-urgency">🎁 Free resources available for a limited time!</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-painpoints">Your Name</label>
-                    <input type="text" id="name-painpoints" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-painpoints">Your Email</label>
-                    <input type="email" id="email-painpoints" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Show Me the Fix!</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="solutionPopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">🎁 Get Your FREE Marketing Guide Now!</h2>
-            <p>Unlock the proven solution for Singapore SME growth.</p>
-            <ul class="popup-solution-list">
-                <li><strong>📘 Instant Access:</strong> Download the Digital Marketing Playbook (2024 Edition).</li>
-                <li><strong>📊 Bonus:</strong> Get a complimentary SME Marketing Mini-Audit.</li>
-            </ul>
-            <p class="popup-urgency">⏳ Limited copies of the Playbook available for free download!</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-solution">Your Name</label>
-                    <input type="text" id="name-solution" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-solution">Your Email</label>
-                    <input type="email" id="email-solution" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Claim My Free Guide!</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="howWeSolvePopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">💡 Ready to Solve Your Marketing Challenges?</h2>
-            <p>Let us show you how we can help your SME overcome:</p>
-            <ul class="popup-solution-list">
-                <li><strong>✅ Wasted Ad Spend:</strong> Get a strategy that converts.</li>
-                <li><strong>✅ SEO Confusion:</strong> Simple steps to boost visibility.</li>
-                <li><strong>✅ Competitor Lead Advantage:</strong> Tactics to outperform them.</li>
-            </ul>
-            <p class="popup-urgency">🚀  Send Me the Solution - Limited Free Audit Slots!</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-howwesolve">Your Name</label>
-                    <input type="text" id="name-howwesolve" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-howwesolve">Your Email</label>
-                    <input type="email" id="email-howwesolve" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Send Me the Solution!</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="socialProofPopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">📈 Want Results Like Other Singapore SMEs?</h2>
-            <p>Join 100+ businesses getting real leads and sales!</p>
-            <p class="popup-urgency">⭐ Get the same strategies that generated 200+ leads in 30 days for others.</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-socialproof">Your Name</label>
-                    <input type="text" id="name-socialproof" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-socialproof">Your Email</label>
-                    <input type="email" id="email-socialproof" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">I Want These Results Too!</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="urgencyPopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">🔥 Last Chance for FREE Mini Audit!</h2>
-            <p>Claim your Playbook + Free Mini Audit before slots run out!</p>
-            <p class="popup-urgency">⚠  First 50 sign-ups get a FREE mini consultation - almost full!</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-urgency">Your Name</label>
-                    <input type="text" id="name-urgency" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-urgency">Your Email</label>
-                    <input type="email" id="email-urgency" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Claim My Spot Now!</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="stickyCTAPopup" class="popup-overlay cta-popup">
-        <div class="popup-content">
-            <span class="popup-close-button cta-popup-close">×</span>
-            <h2 class="popup-headline">🎁 Don't Miss Out! Get Your FREE Guide!</h2>
-            <p>Ready to boost your SME marketing?</p>
-            <p class="popup-urgency">👉 Get Your FREE Marketing Guide Now - Instant Download!</p>
-            <form action="mailto:leads@nitchiebot.online" method="post" enctype="text/plain">
-                <div class="popup-form-group">
-                    <label for="name-stickycta">Your Name</label>
-                    <input type="text" id="name-stickycta" name="name" required>
-                </div>
-                <div class="popup-form-group">
-                    <label for="email-stickycta">Your Email</label>
-                    <input type="email" id="email-stickycta" name="email" required>
-                </div>
-                <button type="submit" class="popup-submit-button">Get My Free Guide!</button>
-            </form>
-        </div>
-    </div>
-
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            const popupOverlays = document.querySelectorAll('.popup-overlay'); // Select all pop-ups
-            const popupCloseButtons = document.querySelectorAll('.popup-close-button'); // All close buttons
-            const entryPopupOverlay = document.getElementById('entryPopup'); // Entry popup
-
-            // Function to hide all popups
-            function hideAllPopups() {
-                popupOverlays.forEach(popup => {
-                    popup.style.display = 'none';
+        // Template selection functionality
+        document.querySelectorAll('.template-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                document.querySelectorAll('.template-option').forEach(opt => {
+                    opt.classList.remove('active');
                 });
-            }
-
-            // Event listener for CTA buttons
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    hideAllPopups(); // Hide any currently open pop-up
-                    const popupId = this.dataset.popupId; // Get the popup ID from data-popup-id
-                    const targetPopup = document.getElementById(popupId); // Find the corresponding popup
-                    if (targetPopup) {
-                        targetPopup.style.display = 'block'; // Show the target pop-up
-                    }
-                });
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Get template name
+                const templateName = this.getAttribute('data-template');
+                
+                // Remove all template classes
+                const resume = document.getElementById('resume');
+                resume.classList.remove('template-default', 'template-minimalist', 'template-green', 'template-orange', 'template-purple');
+                
+                // Add selected template class
+                resume.classList.add('template-' + templateName);
             });
-
-            // Event listeners for all close buttons
-            popupCloseButtons.forEach(closeButton => {
-                closeButton.addEventListener('click', function() {
-                    hideAllPopups(); // Hide all popups when any close button is clicked
+        });
+        
+        // Background selection functionality
+        document.querySelectorAll('.bg-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove active class from all options
+                document.querySelectorAll('.bg-option').forEach(opt => {
+                    opt.classList.remove('active');
                 });
+                
+                // Remove any background image
+                document.body.classList.remove('background-image');
+                document.body.style.backgroundImage = '';
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Get background color
+                const bgColor = this.getAttribute('data-bg');
+                
+                // Apply background color to body
+                document.body.style.backgroundColor = bgColor;
             });
-
-            // Event listener to close popup when clicking outside
-            window.addEventListener('click', function(event) {
-                popupOverlays.forEach(popup => {
-                    if (event.target == popup) {
-                        popup.style.display = 'none';
-                    }
-                });
-            });
-
-            // Entry Pop-up Logic - Show after 1 second delay (adjust as needed)
-            setTimeout(function() {
-                entryPopupOverlay.style.display = 'block';
-            }, 1000); // 1000 milliseconds = 1 second
-
-            // Close button for entry popup (using class selector since multiple close buttons now)
-            const entryPopupCloseButton = document.querySelector('.entry-popup-close');
-            if (entryPopupCloseButton) {
-                entryPopupCloseButton.addEventListener('click', function() {
-                    entryPopupOverlay.style.display = 'none';
-                });
-            }
-
-            // Close entry popup when clicking outside
-            window.addEventListener('click', function(event) {
-                if (event.target == entryPopupOverlay) {
-                    entryPopupOverlay.style.display = 'none';
+        });
+        
+        // Background image upload functionality
+        document.getElementById('bg-image-upload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    // Remove active class from all color options
+                    document.querySelectorAll('.bg-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    
+                    // Set the background image
+                    document.body.classList.add('background-image');
+                    document.body.style.backgroundImage = `url(${e.target.result})`;
+                    document.body.style.backgroundColor = '#f4f7f6'; // Fallback color
                 }
-            });
-
-
+                
+                reader.readAsDataURL(e.target.files[0]);
+            }
         });
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
